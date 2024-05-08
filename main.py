@@ -38,7 +38,7 @@ master.bind("<g>", lambda event: matrix.set_draw_mode("balloon"))
 width = matrix.width * matrix.block_size
 height = matrix.height * matrix.block_size
 canvas = Canvas(master, width=width, height=height, bg="#cef", highlightthickness=0)
-canvas.bind("<Button-1>", lambda event: matrix.draw_element(event, matrix=matrix.matrix, draw_mode=matrix.draw_mode))
+canvas.bind("<Button-1>", lambda event: matrix.draw_element(event, draw_mode=matrix.draw_mode))
 canvas.pack()
 
 master.after(round(1 / 100 * 1000), frame())

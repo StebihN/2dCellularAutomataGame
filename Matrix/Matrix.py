@@ -90,16 +90,16 @@ class Matrix:
     def set_draw_mode(self, draw_mode):
         self.draw_mode = draw_mode
 
-    def draw_element(self, event, matrix, draw_mode="sand"):
+    def draw_element(self, event, draw_mode="sand"):
         x, y = event.x // self.block_size, event.y // self.block_size
-        if matrix[y][x].cell_type == "air":
+        if self.matrix[y][x].cell_type == "air":
             if draw_mode == "sand":
-                matrix[y][x] = Sand()
+                self.matrix[y][x] = Sand()
             elif draw_mode == "wood":
-                matrix[y][x] = Wood()
+                self.matrix[y][x] = Wood()
             elif draw_mode == "fire":
-                matrix[y][x] = Fire()
+                self.matrix[y][x] = Fire()
             elif draw_mode == "water":
-                matrix[y][x] = Water("water", "#2389da", 1)
+                self.matrix[y][x] = Water("water", "#2389da", 1)
             elif draw_mode == "balloon":
-                matrix[y][x] = Balloon()
+                self.matrix[y][x] = Balloon()
