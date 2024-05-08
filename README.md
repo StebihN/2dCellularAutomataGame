@@ -99,10 +99,10 @@ class NewMaterial(Cell):
 Inside your material class, implement the update method. This method should take in the surroundings of the cell and decide its state for the next frame. The update method should return two values:
 
 
-| Return    | Description                                               | Possible values                                                                                                                                                |
-|-----------|---------------------------------------------------------- |--------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| First     | The material in the current cell for the next frame       | - `None` if the material remains the same<br>- Any other material                                                                                              |
-| Second    | The direction in which the current material needs to move | - `None` if the material doesn't move <br>-`top_left`<br>- `top`<br>- `top_right`<br>- `left`<br>- `right`<br>- `bottom_left`<br>- `bottom`<br>- `bottom_right`|
+| Return    | Description                                               | Possible values                                                                                                                                                 |
+|-----------|---------------------------------------------------------- |---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| First     | The material in the current cell for the next frame       | - `None` if the material remains the same<br>- Any other material                                                                                               |
+| Second    | The direction in which the current material needs to move | - `None` if the material doesn't move <br>- `top_left`<br>- `top`<br>- `top_right`<br>- `left`<br>- `right`<br>- `bottom_left`<br>- `bottom`<br>- `bottom_right`|
 
 Example:
 ```python
