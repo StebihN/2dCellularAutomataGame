@@ -22,23 +22,37 @@ A cellular automaton (cellular automata plural, or CA for short) is a model of a
 ####  1. Sand
 Sand will continue to fall down as long as there is and `air` cell type underneath it. If there isn't, it will check for `air` cells at the bottom left and bottom right corners and randomly move to one. This results to a pile being formed.
 
+![Sand](https://github.com/StebihN/2dCellularAutomataGame/assets/121977112/af0d56b9-1f2b-41b8-8313-2892c58b30e4)
+
 #### 2. Smoke
 Smoke is made when a `fire` cell type touches the ground or if a `wood` cell type has a `fire` cell type in its surroundings. Smoke will travel in a random upwards direction and will be present on the map for 20 cycles and then disappear. Smoke is a darker colour if it was made as a result of burning `wood` cell types.
+
+![Smoke](https://github.com/StebihN/2dCellularAutomataGame/assets/121977112/49142c74-7a21-40dc-b03a-a4f887a063a4)
 
 #### 3. Fire
 Fire will travel randomly to the bottom until it touches anything that is not an `air` cell type. It will then turn to smoke. It also turns `wood` cell types to dark smoke if it is in its surroundings.
 
+![Fire](https://github.com/StebihN/2dCellularAutomataGame/assets/121977112/2868730e-ed17-4b46-b4b7-ad5512987b7b)
+
 #### 4. Balloon
 A Balloon will travel straight up until it touches the ceiling and pops.
+
+![Balloon](https://github.com/StebihN/2dCellularAutomataGame/assets/121977112/a00d3e2c-17cf-4302-9ec8-c080f501fd90)
 
 #### 5. Wall
 A Wall is a cell type that gets randomly distributed on the map when the game starts. By default, it cannot be spawned.
 
+![Wall](https://github.com/StebihN/2dCellularAutomataGame/assets/121977112/61977ec6-43eb-4206-9100-7fbb75ac0550)
+
 #### 6. Water
 Water is the most complex cell type in the game. It will check for `air` cell types in its surroundings and then spread. The amount of water that spreads around is decided based on its mass. The more mass a `water` cell type has, the darker color it is. If a `sand` cell type touches the `water` cell type, it will sink to the bottom. If a `wood` cell type touches it, it will float. 
 
+![Water](https://github.com/StebihN/2dCellularAutomataGame/assets/121977112/134b7c45-72f4-4165-b156-0f33ff058a36)
+
 #### 7. Wood
 Wood falls straight down until it reaches the floor. If a `fire` cell type is in its surroundings, it will turn to a dark `smoke` cell type.
+
+![Wood](https://github.com/StebihN/2dCellularAutomataGame/assets/121977112/b642d34a-e33d-456a-bd88-c49bcbfd5f6b)
 
 ### Game controls
 
@@ -85,10 +99,10 @@ class NewMaterial(Cell):
 Inside your material class, implement the update method. This method should take in the surroundings of the cell and decide its state for the next frame. The update method should return two values:
 
 
-| Return    | Description                                               | Possible values                                                                                                                                               |
-|-----------|---------------------------------------------------------- |-------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| First     | The material in the current cell for the next frame       | - `None` if the material remains the same<br>- Any other material                                                                                             |
-| Second    | The direction in which the current material needs to move | - `None` if the material doesn't move <br>`top_left`<br>- `top`<br>- `top_right`<br>- `left`<br>- `right`<br>- `bottom_left`<br>- `bottom`<br>- `bottom_right`|
+| Return    | Description                                               | Possible values                                                                                                                                                |
+|-----------|---------------------------------------------------------- |--------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| First     | The material in the current cell for the next frame       | - `None` if the material remains the same<br>- Any other material                                                                                              |
+| Second    | The direction in which the current material needs to move | - `None` if the material doesn't move <br>-`top_left`<br>- `top`<br>- `top_right`<br>- `left`<br>- `right`<br>- `bottom_left`<br>- `bottom`<br>- `bottom_right`|
 
 Example:
 ```python
